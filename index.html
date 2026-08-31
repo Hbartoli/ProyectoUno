@@ -257,21 +257,27 @@
         </a>
     </div>
 
+       <!-- Asegúrate de que el botón esté exactamente así -->
     <div class="btn-container">
         <button id="loadMoreBtn">Ver más proyectos</button>
     </div>
-const btn = document.getElementById('loadMoreBtn');
-const extraCards = document.querySelectorAll('.card-link.extra');
 
-btn.addEventListener('click', () => {
-    extraCards.forEach(card => {
-        // Modificado para trabajar correctamente con flex/block y animaciones css si se añaden
-        if (card.style.display === 'block') {
-            card.style.display = 'none';
-            btn.textContent = 'Ver más proyectos';
-        } else {
-            card.style.display = 'block';
-            btn.textContent = 'Ver menos';
-        }
-    });
-});
+    <!-- TODO EL CÓDIGO DEBE IR DENTRO DE ESTAS ETIQUETAS -->
+    <script>
+        const btn = document.getElementById('loadMoreBtn');
+        const extraCards = document.querySelectorAll('.card-link.extra');
+
+        btn.addEventListener('click', () => {
+            extraCards.forEach(card => {
+                if (card.style.display === 'block') {
+                    card.style.display = 'none';
+                    btn.textContent = 'Ver más proyectos';
+                } else {
+                    card.style.display = 'block';
+                    btn.textContent = 'Ver menos';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
